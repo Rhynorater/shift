@@ -1,19 +1,20 @@
 {
   "name": "shift",
-  "version": "0.0.1",
-  "description": "Plugin package template with frontend using VueJS",
+  "version": "0.1.0",
+  "description": "Monorepo for the Shift plugin.",
   "author": "Caido Labs Inc. <dev@caido.io>",
-  "license": "ELv2+Mod",
   "type": "module",
   "scripts": {
     "typecheck": "pnpm -r typecheck",
-    "build": "node scripts/clean.js && pnpm -r build && node scripts/pack.js"
+    "build": "caido-dev build",
+    "watch": "caido-dev watch",
+    "lint": "eslint --fix packages/*/src",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "@caido-community/dev": "^0.1.5",
-    "@caido/plugin-manifest": "0.2.0",
-    "jszip": "3.10.1",
-    "typescript": "5.5.4",
+    "@caido-community/dev": "0.1.6",
+    "@caido/plugin-manifest": "0.3.0",
+    "typescript": "5.8.3",
     "vite": "5.2.7"
   }
 }
